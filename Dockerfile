@@ -1,4 +1,4 @@
-# Base build stage (for building Next.js if needed)
+# Buid stage
 FROM node:22-slim AS builder
 
 WORKDIR /app
@@ -31,7 +31,7 @@ else \
 echo "Skipping build in CI (already built)"; \
 fi
 
-# Final runtime image
+# Runtime stage
 FROM docker.io/node:22-alpine AS runner
 LABEL org.opencontainers.image.title "Homepage"
 LABEL org.opencontainers.image.description "A self-hosted services landing page, with docker and service integrations."

@@ -97,7 +97,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build Next.js app
+      - name: Build app
         run: |
           NEXT_PUBLIC_BUILDTIME="${{ fromJSON(steps.meta.outputs.json).labels['org.opencontainers.image.created'] }}" \
           NEXT_PUBLIC_VERSION="${{ fromJSON(steps.meta.outputs.json).labels['org.opencontainers.image.version'] }}" \
