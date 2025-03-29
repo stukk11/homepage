@@ -21,3 +21,4 @@ repos:
     rev: v0.14.0
     hooks:
       - id: yamlfmt
+        exclude: "docs/layouts/custom.yml"
