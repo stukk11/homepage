@@ -43,7 +43,7 @@ LABEL org.opencontainers.image.licenses='Apache-2.0'
 WORKDIR /app
 ENV NODE_ENV=production
 
-# Trust the traced production app output — no reinstall needed
+# Copy only necessary files from the build stage
 COPY --from=builder --chown=1000:1000 /app/.next/standalone/ ./
 COPY --from=builder --chown=1000:1000 /app/.next/static ./.next/static
 COPY --from=builder --chown=1000:1000 /app/public ./public
