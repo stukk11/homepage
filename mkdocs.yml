@@ -1,13 +1,10 @@
 site_name: Homepage
-
 # Project information
 site_url: https://gethomepage.dev/
-
 # Repository
 repo_name: gethomepage/homepage
 repo_url: https://github.com/gethomepage/homepage
 edit_uri: https://github.com/gethomepage/homepage/tree/main/docs/
-
 nav:
   - "Home":
       - index.md
@@ -200,7 +197,6 @@ nav:
       - more/coverage.md
       - more/sponsors.md
       - more/homepage-move.md
-
 theme:
   name: material
   custom_dir: docs/overrides
@@ -225,7 +221,6 @@ theme:
         icon: material/brightness-4
         name: Switch to system preference
   logo: assets/banner_light@2x.webp
-
   favicon: assets/favicon.ico
   features:
     - navigation.instant
@@ -239,10 +234,8 @@ theme:
     - navigation.sections
     - navigation.indexes
     - content.code.annotate
-
 extra_css:
   - "stylesheets/extra.css"
-
 extra:
   social:
     - icon: fontawesome/brands/discord
@@ -253,7 +246,6 @@ extra:
       link: https://opencollective.com/homepage
     - icon: simple/patreon
       link: https://www.patreon.com/gethomepage
-
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -276,7 +268,6 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - admonition
-
 plugins:
   - group:
       enabled: !ENV MKINSIDERS

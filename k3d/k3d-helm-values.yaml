@@ -2,7 +2,6 @@ image:
   repository: k3d-registry.localhost:55000/homepage
   tag: local
   pullPolicy: Always
-
 config:
   bookmarks:
     - Developer:
@@ -14,12 +13,10 @@ config:
         - My First Service:
             href: http://localhost/
             description: Homepage is awesome
-
     - My Second Group:
         - My Second Service:
             href: http://localhost/
             description: Homepage is the best
-
     - My Third Group:
         - My Third Service:
             href: http://localhost/
@@ -45,17 +42,13 @@ config:
     mode: cluster
   docker:
   settings:
-
 env:
   - name: HOMEPAGE_ALLOWED_HOSTS
     value: "homepage.k3d.localhost:8080"
-
 serviceAccount:
   create: true
   name: homepage
-
 enableRbac: true
-
 ingress:
   main:
     enabled: true
@@ -70,7 +63,6 @@ ingress:
         paths:
           - path: /
             pathType: Prefix
-
 persistence:
   # this persists the .next directory which greatly improves successive pod startup times in Tilt,
   # but it breaks normal deployments, so it is disabled by default

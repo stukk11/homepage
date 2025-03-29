@@ -1,5 +1,4 @@
 name: Docs
-
 on:
   push:
     tags: ["v*.*.*"]
@@ -13,10 +12,8 @@ on:
       - "mkdocs.yml"
   merge_group:
   workflow_dispatch:
-
 permissions:
   contents: write
-
 jobs:
   pre-commit:
     name: Linting Checks
@@ -30,7 +27,6 @@ jobs:
           python-version: 3.x
       - name: Check files
         uses: pre-commit/action@v3.0.1
-
   test:
     name: Test Build
     if: github.repository == 'gethomepage/homepage' && github.event_name == 'pull_request'
