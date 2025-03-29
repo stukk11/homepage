@@ -11,7 +11,7 @@ RUN pnpm install --frozen-lockfile --prefer-offline
 
 # Copy all source files
 COPY . .
-COPY .next .next
+COPY .next* .next/
 
 ARG CI
 ARG BUILDTIME
