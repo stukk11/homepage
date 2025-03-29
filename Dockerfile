@@ -9,8 +9,9 @@ COPY package.json pnpm-lock.yaml ./
 RUN corepack enable && corepack prepare pnpm@latest --activate
 RUN pnpm install --frozen-lockfile --prefer-offline
 
-# Copy all source files, .next dir included
+# Copy all source files
 COPY . .
+COPY .next .next
 
 ARG CI
 ARG BUILDTIME
