@@ -13,8 +13,8 @@ const customJestConfig = {
   },
   transformIgnorePatterns: ["/node_modules/"],
   testPathIgnorePatterns: ["<rootDir>/node_modules/", "config/"],
-  collectCoverage: true,
-  coverageDirectory: "coverage",
+  // collectCoverage: true,
+  // coverageDirectory: "coverage",
   clearMocks: true,
 };
 
