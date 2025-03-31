@@ -4,10 +4,6 @@ export function __setEndpointMockData(endpoint, response) {
   mockResponses[endpoint] = response;
 }
 
-export function __setEndpointMockError(endpoint, error) {
-  mockResponses[endpoint] = error;
-}
-
 export function __clearMocks() {
   mockResponses = {};
 }
