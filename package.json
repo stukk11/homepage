@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "telemetry": "next telemetry disable"
+    "telemetry": "next telemetry disable",
+    "test": "jest"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.19",
@@ -46,6 +47,10 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/postcss": "^4.0.9",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "babel-jest": "^29.7.0",
     "eslint": "^9.21.0",
     "eslint-config-next": "^15.1.7",
     "eslint-config-prettier": "^10.0.2",
@@ -54,10 +59,14 @@
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "postcss": "^8.5.2",
     "prettier": "^3.5.2",
     "tailwind-scrollbar": "^4.0.1",
     "tailwindcss": "^4.0.9",
+    "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   },
   "optionalDependencies": {
