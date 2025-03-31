@@ -18,22 +18,22 @@ const service = {
   },
 };
 
-describe("Gitlab Widget", () => {
+describe("Gitlab Service Widget", () => {
   beforeEach(() => {
     __clearMocks();
   });
 
-  it("renders", () => {
+  it("renders while data is pending", () => {
     render(
       <SettingsContext.Provider value={{ settings: mockSettings }}>
         <Component service={service} />
       </SettingsContext.Provider>,
     );
 
-    expect(screen.getByText(/Groups/i)).toBeInTheDocument();
-    expect(screen.getByText(/Issues/i)).toBeInTheDocument();
-    expect(screen.getByText(/Merge Requests/i)).toBeInTheDocument();
-    expect(screen.getByText(/Projects/i)).toBeInTheDocument();
+    expect(screen.getByText("Groups")).toBeInTheDocument();
+    expect(screen.getByText("Issues")).toBeInTheDocument();
+    expect(screen.getByText("Merge Requests")).toBeInTheDocument();
+    expect(screen.getByText("Projects")).toBeInTheDocument();
   });
 
   it("renders with sample data", () => {
