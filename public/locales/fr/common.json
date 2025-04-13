@@ -1024,12 +1024,12 @@
         "bcharge": "Charge de la batterie",
         "timeleft": "Temps restant"
     },
-    "hoarder": {
-        "bookmarks": "Marque-pages",
-        "favorites": "Favoris",
-        "archived": "Archivé",
+    "karakeep": {
+        "bookmarks": "Bookmarks",
+        "favorites": "Favorites",
+        "archived": "Archived",
         "highlights": "Highlights",
-        "lists": "Listes",
+        "lists": "Lists",
         "tags": "Étiquettes"
     },
     "slskd": {

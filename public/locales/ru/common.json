@@ -1024,12 +1024,12 @@
         "bcharge": "Заряд батареи",
         "timeleft": "Осталось"
     },
-    "hoarder": {
-        "bookmarks": "Закладки",
-        "favorites": "Избранное",
-        "archived": "Архивированное",
-        "highlights": "События",
-        "lists": "Список",
+    "karakeep": {
+        "bookmarks": "Bookmarks",
+        "favorites": "Favorites",
+        "archived": "Archived",
+        "highlights": "Highlights",
+        "lists": "Lists",
         "tags": "Теги"
     },
     "slskd": {

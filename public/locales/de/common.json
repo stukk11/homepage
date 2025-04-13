@@ -1024,12 +1024,12 @@
         "bcharge": "Akkuladung",
         "timeleft": "Verbleibende Zeit"
     },
-    "hoarder": {
-        "bookmarks": "Lesezeichen",
-        "favorites": "Favoriten",
-        "archived": "Archiviert",
+    "karakeep": {
+        "bookmarks": "Bookmarks",
+        "favorites": "Favorites",
+        "archived": "Archived",
         "highlights": "Highlights",
-        "lists": "Listen",
+        "lists": "Lists",
         "tags": "Schlagwörter"
     },
     "slskd": {
