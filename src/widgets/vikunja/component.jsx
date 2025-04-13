@@ -43,7 +43,7 @@ export default function Component({ service }) {
         <Block label="vikunja.tasksInProgress" value={t("common.number", { value: tasksInProgress.length })} />
       </Container>
       {widget.enableTaskList &&
-        tasksData.slice(0, 5).map((task) => (
+        tasksData.slice(0, 10).map((task) => (
           <div
             key={task.id}
             className="text-theme-700 dark:text-theme-200 relative h-5 rounded-md bg-theme-200/50 dark:bg-theme-900/20 m-1 px-1 flex"
