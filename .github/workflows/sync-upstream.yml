@@ -1,8 +1,9 @@
 name: Sync Fork from Upstream
 
 on:
-  schedule:
-    - cron: '0 3 * * *'  # Every day at 03:00 UTC
+# Remove autorun
+#  schedule:
+#    - cron: '0 3 * * *'  # Every day at 03:00 UTC
   workflow_dispatch:      # Manual trigger via GitHub UI
 
 jobs:
