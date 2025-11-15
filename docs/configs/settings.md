@@ -109,6 +109,20 @@ color: slate
 
 Supported colors are: `slate`, `gray`, `zinc`, `neutral`, `stone`, `amber`, `yellow`, `lime`, `green`, `emerald`, `teal`, `cyan`, `sky`, `blue`, `indigo`, `violet`, `purple`, `fuchsia`, `pink`, `rose`, `red`, `white`
 
+## Block Highlight Levels
+
+You can override the default Tailwind classes applied when a widget highlight rule resolves to the `good`, `warn`, or `danger` level.
+
+```yaml
+blockHighlights:
+  levels:
+    good: "bg-emerald-500/40 text-emerald-950 dark:bg-emerald-900/60 dark:text-emerald-400"
+    warn: "bg-amber-300/30 text-amber-900 dark:bg-amber-900/30 dark:text-amber-200"
+    danger: "bg-rose-700/45 text-rose-200 dark:bg-rose-950/70 dark:text-rose-400"
+```
+
+Any unspecified level falls back to the built-in defaults.
+
 ## Layout
 
 You can configure service and bookmarks sections to be either "column" or "row" based layouts, like so:
@@ -264,7 +278,7 @@ fullWidth: true
 
 ### Maximum Group Columns
 
-You can set the maximum number of columns of groups on larger screen sizes (note this is only for groups with the default `style: columns`, not groups with `stle: row`) by adding:
+You can set the maximum number of columns of groups on larger screen sizes (note this is only for groups with the default `style: columns`, not groups with `style: row`) by adding:
 
 ```yaml
 maxGroupColumns: 8 # default is 4 for services, 6 for bookmarks, max 8
@@ -441,6 +455,7 @@ There are a few optional settings for the Quick Launch feature:
 - `showSearchSuggestions`: show search suggestions for the internet search. If this is not specified then the setting will be inherited from the search widget. If it is not specified there either, it will default to false. For custom providers the `suggestionUrl` needs to be set in order for this to work.
 - `provider`: search engine provider. If none is specified it will try to use the provider set for the Search Widget, if neither are present then internet search will be disabled.
 - `hideVisitURL`: disable detecting and offering an option to open URLs. This is false by default, enabling the feature.
+- `mobileButtonPosition`: enables and sets the position of the mobile quicklaunch button. Options are `top-left`, `top-right`, `bottom-left`, `bottom-right`. This is empty by default, disabling the feature.
 
 ```yaml
 quicklaunch:
@@ -485,9 +500,9 @@ logpath: /logfile/path
 
 By default, logs are sent both to `stdout` and to a file at the path specified. This can be changed by setting the `LOG_TARGETS` environment variable to one of `both` (default), `stdout` or `file`.
 
-## Show Docker Stats
+## Show Container Stats
 
-You can show all docker stats expanded in `settings.yaml`:
+You can show all docker or proxmox stats expanded in `settings.yaml`:
 
 ```yaml
 showStats: true
