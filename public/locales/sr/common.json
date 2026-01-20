@@ -532,7 +532,8 @@
         "child_bridges_status": "{{ok}}/{{total}}",
         "up": "Горе",
         "pending": "На чекању",
-        "down": "Доле"
+        "down": "Доле",
+        "ok": "Ok"
     },
     "healthchecks": {
         "new": "Сада",
@@ -598,6 +599,15 @@
     "paperlessngx": {
         "inbox": "Примљено",
         "total": "Укупно"
+    },
+    "pangolin": {
+        "orgs": "Организације",
+        "sites": "Сајтови",
+        "resources": "Ресурси",
+        "targets": "Циљеви",
+        "traffic": "Саобраћај",
+        "in": "Улазак",
+        "out": "Излазак"
     },
     "peanut": {
         "battery_charge": "Напуњеност батерије",
@@ -759,7 +769,8 @@
     "ghostfolio": {
         "gross_percent_today": "Данас",
         "gross_percent_1y": "Једна година",
-        "gross_percent_max": "Све време"
+        "gross_percent_max": "Све време",
+        "net_worth": "Нето вредност"
     },
     "audiobookshelf": {
         "podcasts": "Подкасти",
@@ -781,6 +792,12 @@
         "authors": "Аутори",
         "categories": "Категорије",
         "series": "Серије"
+    },
+    "booklore": {
+        "libraries": "Libraries",
+        "books": "Books",
+        "reading": "Reading",
+        "finished": "Finished"
     },
     "jdownloader": {
         "downloadCount": "Ред",

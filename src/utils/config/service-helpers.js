@@ -35,7 +35,7 @@ function parseServicesToGroups(services) {
         serviceGroupServices.push({
           name: entryName,
           ...entries[entryName],
-          weight: entries[entryName].weight || serviceGroupServices.length * 100, // default weight
+          weight: entries[entryName].weight ?? (serviceGroupServices.length + 1) * 100, // default weight
           type: "service",
         });
       }
@@ -107,11 +107,12 @@ export async function servicesFromDocker() {
                 constructedService = {
                   container: containerName.replace(/^\//, ""),
                   server: serverName,
+                  weight: 0,
                   type: "service",
                 };
               }
               let substitutedVal = substituteEnvironmentVars(containerLabels[label]);
-              if (value === "widget.version") {
+              if (value === "widget.version" || /^widgets\[\d+\]\.version$/.test(value)) {
                 substitutedVal = parseInt(substitutedVal, 10);
               }
               shvl.set(constructedService, value, substitutedVal);
@@ -279,6 +280,9 @@ export function cleanServiceGroups(groups) {
           slugs,
           symbols,
 
+          // crowdsec
+          limit24h,
+
           // customapi
           mappings,
           display,
@@ -310,7 +314,7 @@ export function cleanServiceGroups(groups) {
           // gamedig
           gameToken,
 
-          // authentik, beszel, glances, immich, komga, mealie, pihole, pfsense, speedtest
+          // authentik, beszel, glances, immich, komga, mealie, netalertx, pihole, pfsense, speedtest
           version,
 
           // glances
@@ -473,6 +477,10 @@ export function cleanServiceGroups(groups) {
           if (defaultinterval) widget.defaultinterval = defaultinterval;
         }
 
+        if (limit24h !== undefined) {
+          widget.limit24h = !!limit24h;
+        }
+
         if (type === "docker") {
           if (server) widget.server = server;
           if (container) widget.container = container;
@@ -551,11 +559,13 @@ export function cleanServiceGroups(groups) {
             "immich",
             "komga",
             "mealie",
+            "netalertx",
             "pfsense",
             "pihole",
             "speedtest",
             "wgeasy",
             "grafana",
+            "gluetun",
           ].includes(type)
         ) {
           if (version) widget.version = parseInt(version, 10);

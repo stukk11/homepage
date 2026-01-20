@@ -532,7 +532,8 @@
         "child_bridges_status": "{{ok}}/{{total}}",
         "up": "Aktivno",
         "pending": "U tijeku",
-        "down": "Neaktivno"
+        "down": "Neaktivno",
+        "ok": "Ok"
     },
     "healthchecks": {
         "new": "Novo",
@@ -598,6 +599,15 @@
     "paperlessngx": {
         "inbox": "Ulazni sandučić",
         "total": "Ukupno"
+    },
+    "pangolin": {
+        "orgs": "Orgs",
+        "sites": "Sites",
+        "resources": "Resources",
+        "targets": "Targets",
+        "traffic": "Traffic",
+        "in": "In",
+        "out": "Out"
     },
     "peanut": {
         "battery_charge": "Napunjenost baterije",
@@ -759,7 +769,8 @@
     "ghostfolio": {
         "gross_percent_today": "Danas",
         "gross_percent_1y": "Jedna godina",
-        "gross_percent_max": "Svo vrijeme"
+        "gross_percent_max": "Svo vrijeme",
+        "net_worth": "Neto vrijednost"
     },
     "audiobookshelf": {
         "podcasts": "Podcasti",
@@ -781,6 +792,12 @@
         "authors": "Autori",
         "categories": "Kategorije",
         "series": "Serije"
+    },
+    "booklore": {
+        "libraries": "Libraries",
+        "books": "Books",
+        "reading": "Reading",
+        "finished": "Finished"
     },
     "jdownloader": {
         "downloadCount": "Red čekanja",

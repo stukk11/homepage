@@ -9,6 +9,7 @@ import azuredevops from "./azuredevops/widget";
 import backrest from "./backrest/widget";
 import bazarr from "./bazarr/widget";
 import beszel from "./beszel/widget";
+import booklore from "./booklore/widget";
 import caddy from "./caddy/widget";
 import calendar from "./calendar/widget";
 import calibreweb from "./calibreweb/widget";
@@ -87,6 +88,7 @@ import openmediavault from "./openmediavault/widget";
 import openwrt from "./openwrt/widget";
 import opnsense from "./opnsense/widget";
 import overseerr from "./overseerr/widget";
+import pangolin from "./pangolin/widget";
 import paperlessngx from "./paperlessngx/widget";
 import peanut from "./peanut/widget";
 import pfsense from "./pfsense/widget";
@@ -155,6 +157,7 @@ const widgets = {
   azuredevops,
   backrest,
   bazarr,
+  booklore,
   beszel,
   caddy,
   calibreweb,
@@ -237,6 +240,7 @@ const widgets = {
   openmediavault,
   openwrt,
   paperlessngx,
+  pangolin,
   peanut,
   pfsense,
   photoprism,

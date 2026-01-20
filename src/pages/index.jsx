@@ -41,6 +41,17 @@ const Version = dynamic(() => import("components/version"), {
 
 const rightAlignedWidgets = ["weatherapi", "openweathermap", "weather", "openmeteo", "search", "datetime"];
 
+// Normalize language codes so older config values like zh-CN still point to Crowdin-provided ones
+const LANGUAGE_ALIASES = {
+  "zh-cn": "zh-Hans",
+};
+
+const normalizeLanguage = (language) => {
+  if (!language) return "en";
+  const alias = LANGUAGE_ALIASES[language.toLowerCase()];
+  return alias || language;
+};
+
 export async function getStaticProps() {
   let logger;
   try {
@@ -50,6 +61,7 @@ export async function getStaticProps() {
     const services = await servicesResponse();
     const bookmarks = await bookmarksResponse();
     const widgets = await widgetsResponse();
+    const language = normalizeLanguage(settings.language);
 
     return {
       props: {
@@ -60,7 +72,7 @@ export async function getStaticProps() {
           "/api/widgets": widgets,
           "/api/hash": false,
         },
-        ...(await serverSideTranslations(settings.language ?? "en")),
+        ...(await serverSideTranslations(language)),
       },
     };
   } catch (e) {
@@ -218,8 +230,9 @@ function Home({ initialSettings }) {
   );
 
   useEffect(() => {
-    if (settings.language) {
-      i18n.changeLanguage(settings.language);
+    const language = normalizeLanguage(settings.language);
+    if (language) {
+      i18n.changeLanguage(language);
     }
 
     if (settings.theme && theme !== settings.theme) {
@@ -400,6 +413,7 @@ function Home({ initialSettings }) {
             "A highly customizable homepage (or startpage / application dashboard) with Docker and service API integrations."
           }
         />
+        {settings.disableIndexing && <meta name="robots" content="noindex, nofollow" />}
         {settings.base && <base href={settings.base} />}
         {settings.favicon ? (
           <>
@@ -540,48 +554,38 @@ export default function Wrapper({ initialSettings, fallback }) {
       html.classList.add(desiredThemeClass);
     }
 
-    if (backgroundImage) {
-      const safeBackgroundImage = backgroundImage.replace(/'/g, "\\'");
-      body.style.backgroundImage = `linear-gradient(rgb(var(--bg-color) / ${opacity}), rgb(var(--bg-color) / ${opacity})), url('${safeBackgroundImage}')`;
-      body.style.backgroundSize = "cover";
-      body.style.backgroundPosition = "center";
-      body.style.backgroundAttachment = "fixed";
-      body.style.backgroundRepeat = "no-repeat";
-      body.style.backgroundColor = "";
-    } else {
-      body.style.backgroundImage = "none";
-      body.style.backgroundColor = "rgb(var(--bg-color))";
-      body.style.backgroundSize = "";
-      body.style.backgroundPosition = "";
-      body.style.backgroundAttachment = "";
-      body.style.backgroundRepeat = "";
-    }
-
-    return () => {
-      body.style.backgroundImage = "";
-      body.style.backgroundColor = "";
-      body.style.backgroundSize = "";
-      body.style.backgroundPosition = "";
-      body.style.backgroundAttachment = "";
-      body.style.backgroundRepeat = "";
-    };
+    // Remove any previously applied inline styles
+    body.style.backgroundImage = "";
+    body.style.backgroundColor = "";
+    body.style.backgroundAttachment = "";
   }, [backgroundImage, opacity, theme, color, initialSettings.color]);
 
   return (
-    <div id="page_wrapper" className="relative min-h-screen">
-      <div
-        id="inner_wrapper"
-        tabIndex="-1"
-        className={classNames(
-          "w-full min-h-screen overflow-auto",
-          backgroundBlur &&
-            `backdrop-blur${initialSettings.background.blur?.length ? `-${initialSettings.background.blur}` : ""}`,
-          backgroundSaturate && `backdrop-saturate-${initialSettings.background.saturate}`,
-          backgroundBrightness && `backdrop-brightness-${initialSettings.background.brightness}`,
-        )}
-      >
-        <Index initialSettings={initialSettings} fallback={fallback} />
+    <>
+      {backgroundImage && (
+        <div
+          id="background"
+          aria-hidden="true"
+          style={{
+            backgroundImage: `linear-gradient(rgb(var(--bg-color) / ${opacity}), rgb(var(--bg-color) / ${opacity})), url('${backgroundImage}')`,
+          }}
+        />
+      )}
+      <div id="page_wrapper" className="relative h-full">
+        <div
+          id="inner_wrapper"
+          tabIndex="-1"
+          className={classNames(
+            "w-full h-full overflow-auto",
+            backgroundBlur &&
+              `backdrop-blur${initialSettings.background.blur?.length ? `-${initialSettings.background.blur}` : ""}`,
+            backgroundSaturate && `backdrop-saturate-${initialSettings.background.saturate}`,
+            backgroundBrightness && `backdrop-brightness-${initialSettings.background.brightness}`,
+          )}
+        >
+          <Index initialSettings={initialSettings} fallback={fallback} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

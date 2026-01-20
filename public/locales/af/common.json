@@ -532,7 +532,8 @@
         "child_bridges_status": "{{ok}}/{{total}}",
         "up": "Op",
         "pending": "Afwagtend",
-        "down": "Af"
+        "down": "Af",
+        "ok": "Ok"
     },
     "healthchecks": {
         "new": "Nuut",
@@ -598,6 +599,15 @@
     "paperlessngx": {
         "inbox": "Inmandjie",
         "total": "Totaal"
+    },
+    "pangolin": {
+        "orgs": "Orgs",
+        "sites": "Sites",
+        "resources": "Bronne",
+        "targets": "Teikens",
+        "traffic": "Verkeer",
+        "in": "In",
+        "out": "Uit"
     },
     "peanut": {
         "battery_charge": "Batterylading",
@@ -759,7 +769,8 @@
     "ghostfolio": {
         "gross_percent_today": "Vandag",
         "gross_percent_1y": "Een jaar",
-        "gross_percent_max": "Alle tyd"
+        "gross_percent_max": "Alle tyd",
+        "net_worth": "Netto Waarde"
     },
     "audiobookshelf": {
         "podcasts": "Podsendinge",
@@ -781,6 +792,12 @@
         "authors": "Skrywers",
         "categories": "Kategorieë",
         "series": "Reekse"
+    },
+    "booklore": {
+        "libraries": "Libraries",
+        "books": "Books",
+        "reading": "Reading",
+        "finished": "Finished"
     },
     "jdownloader": {
         "downloadCount": "Tou",

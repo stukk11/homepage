@@ -168,7 +168,7 @@
         "passes": "Tessere"
     },
     "tautulli": {
-        "playing": "Playing",
+        "playing": "In riproduzione",
         "transcoding": "Transcoding",
         "bitrate": "Bitrate",
         "no_active": "No Active Streams",
@@ -313,7 +313,7 @@
         "total": "Total"
     },
     "suwayomi": {
-        "download": "Downloaded",
+        "download": "Scaricati",
         "nondownload": "Non Scaricato",
         "read": "Read",
         "unread": "Unread",
@@ -532,7 +532,8 @@
         "child_bridges_status": "{{ok}}/{{total}}",
         "up": "Up",
         "pending": "Pending",
-        "down": "Down"
+        "down": "Down",
+        "ok": "Ok"
     },
     "healthchecks": {
         "new": "Nuovo",
@@ -598,6 +599,15 @@
     "paperlessngx": {
         "inbox": "In arrivo",
         "total": "Total"
+    },
+    "pangolin": {
+        "orgs": "Orgs",
+        "sites": "Sites",
+        "resources": "Resources",
+        "targets": "Targets",
+        "traffic": "Traffic",
+        "in": "In",
+        "out": "Out"
     },
     "peanut": {
         "battery_charge": "Carica Batteria",
@@ -759,7 +769,8 @@
     "ghostfolio": {
         "gross_percent_today": "Today",
         "gross_percent_1y": "Un anno",
-        "gross_percent_max": "Sempre"
+        "gross_percent_max": "Sempre",
+        "net_worth": "Net Worth"
     },
     "audiobookshelf": {
         "podcasts": "Podcast",
@@ -781,6 +792,12 @@
         "authors": "Autori",
         "categories": "Categories",
         "series": "Series"
+    },
+    "booklore": {
+        "libraries": "Libraries",
+        "books": "Books",
+        "reading": "Reading",
+        "finished": "Finished"
     },
     "jdownloader": {
         "downloadCount": "Queue",

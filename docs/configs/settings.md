@@ -396,7 +396,9 @@ Set your desired language using:
 language: fr
 ```
 
-Currently supported languages: ca, de, en, es, fr, he, hr, hu, it, nb-NO, nl, pt, ru, sv, vi, zh-CN, zh-Hant
+Currently supported languages: ca, de, en, es, fr, he, hr, hu, it, nb-NO, nl, pt, ru, sv, vi, zh-Hans (Simplified), zh-Hant (Traditional)
+
+`zh-CN` will still work and is automatically mapped to `zh-Hans` for backwards compatibility.
 
 You can also specify locales e.g. for the DateTime widget, e.g. en-AU, en-GB, etc.
 
@@ -571,3 +573,18 @@ or per service widget (`services.yaml`) with:
 ```
 
 If either value is set to true, the error message will be hidden.
+
+## Disable Search Engine Indexing
+
+You can request that search engines not to index your Homepage instance by enabling the `disableIndexing` setting.
+
+```yaml
+disableIndexing: true
+```
+
+When enabled, this will:
+
+- Disallow all crawlers in `robots.txt`
+- Add `<meta name="robots" content="noindex, nofollow">` tags to prevent indexing
+
+By default this feature is disabled.
