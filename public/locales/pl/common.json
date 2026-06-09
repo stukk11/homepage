@@ -66,6 +66,11 @@
         "wait": "Proszę czekać",
         "empty_data": "Status podsystemu nieznany"
     },
+    "unifi_drive": {
+        "healthy": "Zdrowy",
+        "degraded": "Zdegradowany",
+        "no_data": "Brak danych o miejscu przechowywania"
+    },
     "docker": {
         "rx": "Rx",
         "tx": "Tx",
@@ -100,6 +105,16 @@
     "emby": {
         "playing": "Odtwarzanie",
         "transcoding": "Transkodowanie",
+        "bitrate": "Bitrate",
+        "no_active": "Brak aktywnych strumieni",
+        "movies": "Filmy",
+        "series": "Seriale",
+        "episodes": "Odcinki",
+        "songs": "Piosenki"
+    },
+    "jellyfin": {
+        "playing": "Odtwarza",
+        "transcoding": "Transkoduje",
         "bitrate": "Bitrate",
         "no_active": "Brak aktywnych strumieni",
         "movies": "Filmy",
@@ -173,6 +188,13 @@
         "bitrate": "Bitrate",
         "no_active": "Brak aktywnych strumieni",
         "plex_connection_error": "Sprawdź połączenie z Plex"
+    },
+    "tracearr": {
+        "no_active": "Brak aktywnych strumieni",
+        "streams": "Strumienie",
+        "transcodes": "Transkodowania",
+        "directplay": "Odtwarzanie bezpośrednie",
+        "bitrate": "Bitrate"
     },
     "omada": {
         "connectedAp": "Połączone punkty dostępowe",
@@ -272,17 +294,13 @@
         "approved": "Zaakceptowane",
         "available": "Dostępne"
     },
-    "jellyseerr": {
+    "seerr": {
         "pending": "Oczekujące",
         "approved": "Zaakceptowane",
         "available": "Dostępne",
-        "issues": "Otwarte zgłoszenia"
-    },
-    "overseerr": {
-        "pending": "Oczekujące",
+        "completed": "Ukończone",
         "processing": "Przetwarzane",
-        "approved": "Zaakceptowane",
-        "available": "Dostępne"
+        "issues": "Otwarte zgłoszenia"
     },
     "netalertx": {
         "total": "Razem",
@@ -326,6 +344,16 @@
         "address": "Adres",
         "expires": "Wygasa za",
         "never": "Nigdy",
+        "user": "Użytkownik",
+        "hostname": "Host",
+        "name": "Nazwa",
+        "client_version": "Wersja klienta",
+        "os": "System operacyjny",
+        "created": "Utworzony",
+        "authorized": "Autoryzowany",
+        "is_external": "Jest zewnętrzny",
+        "update_available": "Dostępna aktualizacja",
+        "tags": "Tagi",
         "last_seen": "Ostatnio dostępny",
         "now": "Teraz",
         "years": "{{number}}rok/lat",
@@ -334,7 +362,9 @@
         "hours": "{{number}}godzin",
         "minutes": "{{number}}miesięcy",
         "seconds": "{{number}}sekund",
-        "ago": "{{value}} temu"
+        "ago": "{{value}} temu",
+        "true": "Tak",
+        "false": "Nie"
     },
     "technitium": {
         "totalQueries": "Zapytania",
@@ -705,6 +735,10 @@
         "uptime": "Czas działania",
         "volumeAvailable": "Dostępne"
     },
+    "dispatcharr": {
+        "channels": "Kanały",
+        "streams": "Strumienie"
+    },
     "mylar": {
         "series": "Seriale",
         "issues": "Zgłoszenia",
@@ -794,10 +828,10 @@
         "series": "Serie"
     },
     "booklore": {
-        "libraries": "Libraries",
-        "books": "Books",
-        "reading": "Reading",
-        "finished": "Finished"
+        "libraries": "Biblioteki",
+        "books": "Książki",
+        "reading": "Czytane",
+        "finished": "Skończone"
     },
     "jdownloader": {
         "downloadCount": "W kolejce",
@@ -901,6 +935,19 @@
     "netdata": {
         "warnings": "Ostrzeżenia",
         "criticals": "Krytyczny"
+    },
+    "ntfy": {
+        "title": "Tytuł",
+        "priority": "Priorytet",
+        "lastReceived": "Ostatnio odebrane",
+        "message": "Wiadomość",
+        "tags": "Tagi",
+        "none": "Brak",
+        "min": "Min",
+        "low": "Niski",
+        "default": "Domyślny",
+        "high": "Wysoki",
+        "urgent": "Pilny"
     },
     "plantit": {
         "events": "Wydarzenia",
@@ -1136,5 +1183,32 @@
         "songs": "Piosenki",
         "time": "Czas",
         "artists": "Wykonawcy"
+    },
+    "arcane": {
+        "containers": "Kontenery",
+        "images": "Obrazy",
+        "image_updates": "Aktualizacje obrazów",
+        "images_unused": "Nieużywane",
+        "environment_required": "Wymagane ID środowiska"
+    },
+    "dockhand": {
+        "running": "Działające",
+        "stopped": "Zatrzymane",
+        "cpu": "CPU",
+        "memory": "Pamięć",
+        "images": "Obrazy",
+        "volumes": "Woluminy",
+        "events_today": "Zdarzenia dzisiaj",
+        "pending_updates": "Oczekujące aktualizacje",
+        "stacks": "Stosy",
+        "paused": "Wstrzymane",
+        "total": "Razem",
+        "environment_not_found": "Środowisko nie znalezione"
+    },
+    "sparkyfitness": {
+        "eaten": "Zjedzone",
+        "burned": "Spalone",
+        "remaining": "Pozostało",
+        "steps": "Kroki"
     }
 }

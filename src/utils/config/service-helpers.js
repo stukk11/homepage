@@ -10,6 +10,7 @@ import { getKubeConfig } from "utils/config/kubernetes";
 import * as shvl from "utils/config/shvl";
 import kubernetes from "utils/kubernetes/export";
 import createLogger from "utils/logger";
+import { parseVersionForUrl } from "utils/proxy/api-helpers";
 
 const logger = createLogger("service-helpers");
 
@@ -86,7 +87,7 @@ export async function servicesFromDocker() {
         // bad docker connections can result in a <Buffer ...> object?
         // in any case, this ensures the result is the expected array
         if (!Array.isArray(containers)) {
-          return [];
+          return { server: serverName, services: [] };
         }
 
         const discovered = containers.map((container) => {
@@ -113,7 +114,7 @@ export async function servicesFromDocker() {
               }
               let substitutedVal = substituteEnvironmentVars(containerLabels[label]);
               if (value === "widget.version" || /^widgets\[\d+\]\.version$/.test(value)) {
-                substitutedVal = parseInt(substitutedVal, 10);
+                substitutedVal = parseVersionForUrl(substitutedVal);
               }
               shvl.set(constructedService, value, substitutedVal);
             }
@@ -188,6 +189,7 @@ export async function servicesFromKubernetes() {
 
     const resources = [...ingressList, ...traefikIngressList, ...httpRouteList];
 
+    /* c8 ignore next 3 -- resources is always an array once the spreads succeed */
     if (!resources) {
       return [];
     }
@@ -258,6 +260,9 @@ export function cleanServiceGroups(groups) {
           highlight,
           type,
 
+          // arcane
+          env,
+
           // azuredevops
           repositoryId,
           userEmail,
@@ -294,16 +299,22 @@ export function cleanServiceGroups(groups) {
           // diskstation
           volume,
 
+          // dispatcharr
+          enableActiveStreams,
+
           // docker
           container,
           server,
+
+          // dockhand
+          environment,
 
           // emby, jellyfin
           enableBlocks,
           enableNowPlaying,
           enableMediaControl,
 
-          // emby, jellyfin, tautulli
+          // emby, jellyfin, tautulli, tracearr
           enableUser,
           expandOneStreamToTwoRows,
           showEpisodeNumber,
@@ -466,6 +477,10 @@ export function cleanServiceGroups(groups) {
           if (repositoryId) widget.repositoryId = repositoryId;
         }
 
+        if (type === "arcane") {
+          if (env !== undefined) widget.env = env;
+        }
+
         if (type === "beszel") {
           if (systemId) widget.systemId = systemId;
         }
@@ -528,11 +543,14 @@ export function cleanServiceGroups(groups) {
           if (enableBlocks !== undefined) widget.enableBlocks = JSON.parse(enableBlocks);
           if (enableNowPlaying !== undefined) widget.enableNowPlaying = JSON.parse(enableNowPlaying);
         }
-        if (["emby", "jellyfin", "tautulli"].includes(type)) {
+        if (["emby", "jellyfin", "tautulli", "tracearr"].includes(type)) {
           if (expandOneStreamToTwoRows !== undefined)
             widget.expandOneStreamToTwoRows = !!JSON.parse(expandOneStreamToTwoRows);
           if (showEpisodeNumber !== undefined) widget.showEpisodeNumber = !!JSON.parse(showEpisodeNumber);
           if (enableUser !== undefined) widget.enableUser = !!JSON.parse(enableUser);
+        }
+        if (type === "tracearr") {
+          if (view !== undefined) widget.view = view;
         }
         if (["sonarr", "radarr"].includes(type)) {
           if (enableQueue !== undefined) widget.enableQueue = JSON.parse(enableQueue);
@@ -543,6 +561,9 @@ export function cleanServiceGroups(groups) {
         }
         if (["diskstation", "qnap"].includes(type)) {
           if (volume) widget.volume = volume;
+        }
+        if (["dispatcharr"].includes(type)) {
+          if (enableActiveStreams) widget.enableActiveStreams = !!JSON.parse(enableActiveStreams);
         }
         if (type === "gamedig") {
           if (gameToken) widget.gameToken = gameToken;
@@ -557,6 +578,7 @@ export function cleanServiceGroups(groups) {
             "beszel",
             "glances",
             "immich",
+            "jellyfin",
             "komga",
             "mealie",
             "netalertx",
@@ -566,9 +588,10 @@ export function cleanServiceGroups(groups) {
             "wgeasy",
             "grafana",
             "gluetun",
+            "vikunja",
           ].includes(type)
         ) {
-          if (version) widget.version = parseInt(version, 10);
+          widget.version = parseVersionForUrl(version);
         }
         if (type === "glances") {
           if (metric) widget.metric = metric;
@@ -597,13 +620,28 @@ export function cleanServiceGroups(groups) {
           if (refreshInterval) widget.refreshInterval = refreshInterval;
         }
         if (type === "calendar") {
-          if (integrations) widget.integrations = integrations;
+          if (integrations) {
+            if (Array.isArray(integrations)) {
+              widget.integrations = integrations.map((integration) => {
+                if (!integration || typeof integration !== "object") {
+                  return integration;
+                }
+                const { url, ...integrationWithoutUrl } = integration;
+                return integrationWithoutUrl;
+              });
+            } else {
+              widget.integrations = integrations;
+            }
+          }
           if (firstDayInWeek) widget.firstDayInWeek = firstDayInWeek;
           if (view) widget.view = view;
           if (maxEvents) widget.maxEvents = maxEvents;
           if (previousDays) widget.previousDays = previousDays;
           if (showTime) widget.showTime = showTime;
           if (timezone) widget.timezone = timezone;
+        }
+        if (type === "dockhand") {
+          if (environment) widget.environment = environment;
         }
         if (type === "hdhomerun") {
           if (tuner !== undefined) widget.tuner = tuner;
@@ -627,6 +665,7 @@ export function cleanServiceGroups(groups) {
           if (enableRecentEvents !== undefined) widget.enableRecentEvents = enableRecentEvents;
         }
         if (type === "technitium") {
+          if (node !== undefined) widget.node = node;
           if (range !== undefined) widget.range = range;
         }
         if (type === "lubelogger") {

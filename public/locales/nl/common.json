@@ -66,6 +66,11 @@
         "wait": "Even geduld",
         "empty_data": "Subsysteem status onbekend"
     },
+    "unifi_drive": {
+        "healthy": "Gezond",
+        "degraded": "Gedegradeerd",
+        "no_data": "Geen opslaggegevens beschikbaar"
+    },
     "docker": {
         "rx": "RX",
         "tx": "TX",
@@ -100,6 +105,16 @@
     "emby": {
         "playing": "Afspelen",
         "transcoding": "Transcodering",
+        "bitrate": "Bitrate",
+        "no_active": "Geen Actieve Streams",
+        "movies": "Films",
+        "series": "Series",
+        "episodes": "Afleveringen",
+        "songs": "Nummers"
+    },
+    "jellyfin": {
+        "playing": "Speelt",
+        "transcoding": "Bezig met transcoderen",
         "bitrate": "Bitrate",
         "no_active": "Geen Actieve Streams",
         "movies": "Films",
@@ -173,6 +188,13 @@
         "bitrate": "Bitrate",
         "no_active": "Geen Actieve Streams",
         "plex_connection_error": "Controleer Plex Connectie"
+    },
+    "tracearr": {
+        "no_active": "Geen Actieve Streams",
+        "streams": "Streams",
+        "transcodes": "Transcodes",
+        "directplay": "Directe Afspelen",
+        "bitrate": "Bitrate"
     },
     "omada": {
         "connectedAp": "Verbonden APs",
@@ -272,17 +294,13 @@
         "approved": "Goedgekeurd",
         "available": "Beschikbaar"
     },
-    "jellyseerr": {
+    "seerr": {
         "pending": "In afwachting",
         "approved": "Goedgekeurd",
         "available": "Beschikbaar",
-        "issues": "Open Issues"
-    },
-    "overseerr": {
-        "pending": "In afwachting",
+        "completed": "Voltooid",
         "processing": "Verwerken",
-        "approved": "Goedgekeurd",
-        "available": "Beschikbaar"
+        "issues": "Openstaande issues"
     },
     "netalertx": {
         "total": "Totaal",
@@ -326,6 +344,16 @@
         "address": "Adres",
         "expires": "Verloopt",
         "never": "Nooit",
+        "user": "User",
+        "hostname": "Hostname",
+        "name": "Name",
+        "client_version": "Client Version",
+        "os": "OS",
+        "created": "Created",
+        "authorized": "Authorized",
+        "is_external": "Is External",
+        "update_available": "Update Available",
+        "tags": "Tags",
         "last_seen": "Laatst Gezien",
         "now": "Nu",
         "years": "{{number}}j",
@@ -334,7 +362,9 @@
         "hours": "{{number}}u",
         "minutes": "{{number}}m",
         "seconds": "{{number}}s",
-        "ago": "{{value}} Geleden"
+        "ago": "{{value}} Geleden",
+        "true": "Yes",
+        "false": "No"
     },
     "technitium": {
         "totalQueries": "Verzoeken",
@@ -603,11 +633,11 @@
     "pangolin": {
         "orgs": "Orgs",
         "sites": "Sites",
-        "resources": "Resources",
-        "targets": "Targets",
-        "traffic": "Traffic",
+        "resources": "Bronnen",
+        "targets": "Doelen",
+        "traffic": "Netwerkverkeer",
         "in": "In",
-        "out": "Out"
+        "out": "Uit"
     },
     "peanut": {
         "battery_charge": "Batterij opladen",
@@ -705,6 +735,10 @@
         "uptime": "Uptime",
         "volumeAvailable": "Beschikbaar"
     },
+    "dispatcharr": {
+        "channels": "Kanalen",
+        "streams": "Streams"
+    },
     "mylar": {
         "series": "Series",
         "issues": "Problemen",
@@ -770,7 +804,7 @@
         "gross_percent_today": "Vandaag",
         "gross_percent_1y": "Een jaar",
         "gross_percent_max": "Altijd",
-        "net_worth": "Net Worth"
+        "net_worth": "Totaal eigen vermogen"
     },
     "audiobookshelf": {
         "podcasts": "Podcasts",
@@ -794,8 +828,8 @@
         "series": "Series"
     },
     "booklore": {
-        "libraries": "Libraries",
-        "books": "Books",
+        "libraries": "Bibliotheken",
+        "books": "Boeken",
         "reading": "Reading",
         "finished": "Finished"
     },
@@ -901,6 +935,19 @@
     "netdata": {
         "warnings": "Waarschuwingen",
         "criticals": "Kritiek"
+    },
+    "ntfy": {
+        "title": "Title",
+        "priority": "Priority",
+        "lastReceived": "Last Received",
+        "message": "Message",
+        "tags": "Tags",
+        "none": "None",
+        "min": "Min",
+        "low": "Low",
+        "default": "Default",
+        "high": "High",
+        "urgent": "Urgent"
     },
     "plantit": {
         "events": "Gebeurtenissen",
@@ -1136,5 +1183,32 @@
         "songs": "Nummers",
         "time": "Tijd",
         "artists": "Artiesten"
+    },
+    "arcane": {
+        "containers": "Containers",
+        "images": "Images",
+        "image_updates": "Image Updates",
+        "images_unused": "Unused",
+        "environment_required": "Environment ID Required"
+    },
+    "dockhand": {
+        "running": "Running",
+        "stopped": "Stopped",
+        "cpu": "CPU",
+        "memory": "Memory",
+        "images": "Images",
+        "volumes": "Volumes",
+        "events_today": "Events Today",
+        "pending_updates": "Pending Updates",
+        "stacks": "Stacks",
+        "paused": "Paused",
+        "total": "Total",
+        "environment_not_found": "Environment Not Found"
+    },
+    "sparkyfitness": {
+        "eaten": "Eaten",
+        "burned": "Burned",
+        "remaining": "Remaining",
+        "steps": "Steps"
     }
 }
