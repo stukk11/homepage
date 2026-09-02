@@ -39,7 +39,9 @@
         "wait": "Espera, por favor"
     },
     "search": {
-        "placeholder": "Buscar…"
+        "placeholder": "Buscar…",
+        "provider": "Motor de búsqueda: {{name}}",
+        "select_provider": "Seleccionar motores de búsqueda"
     },
     "resources": {
         "cpu": "CPU",
@@ -472,7 +474,7 @@
         "users": "Usuarios",
         "loginsLast24H": "Inicios de sesión (24h)",
         "failedLoginsLast24H": "Inicios de sesión fallidos (24h)",
-        "authorizationsLast24H": "Auths (24h)"
+        "authorizationsLast24H": "Autenticaciones (24 h)"
     },
     "proxmox": {
         "mem": "MEM",
