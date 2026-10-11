@@ -442,6 +442,11 @@
         "7days": "7 Days",
         "30days": "30 Days"
     },
+    "googletasks": {
+        "open": "Open",
+        "dueToday": "Due Today",
+        "overdue": "Overdue"
+    },
     "gotify": {
         "apps": "Applications",
         "clients": "Clients",
