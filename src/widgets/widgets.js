@@ -47,6 +47,7 @@ import gitea from "./gitea/widget";
 import gitlab from "./gitlab/widget";
 import glances from "./glances/widget";
 import gluetun from "./gluetun/widget";
+import googletasks from "./googletasks/widget";
 import gotify from "./gotify/widget";
 import grafana from "./grafana/widget";
 import hdhomerun from "./hdhomerun/widget";
@@ -210,6 +211,7 @@ const widgets = {
   gitlab,
   glances,
   gluetun,
+  googletasks,
   gotify,
   grafana,
   hdhomerun,

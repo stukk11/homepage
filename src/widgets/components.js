@@ -53,6 +53,7 @@ const components = {
   gitlab: dynamic(() => import("./gitlab/component")),
   glances: dynamic(() => import("./glances/component")),
   gluetun: dynamic(() => import("./gluetun/component")),
+  googletasks: dynamic(() => import("./googletasks/component")),
   gotify: dynamic(() => import("./gotify/component")),
   grafana: dynamic(() => import("./grafana/component")),
   hdhomerun: dynamic(() => import("./hdhomerun/component")),

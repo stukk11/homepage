@@ -343,7 +343,7 @@ export function cleanServiceGroups(groups) {
           // dockhand
           environment,
 
-          // emby, jellyfin
+          // emby, googletasks, jellyfin
           enableBlocks,
           enableNowPlaying,
           enableMediaControl,
@@ -459,7 +459,7 @@ export function cleanServiceGroups(groups) {
           pool3,
           pool4,
 
-          // vikunja
+          // googletasks, vikunja
           enableTaskList,
 
           // wgeasy
@@ -719,8 +719,11 @@ export function cleanServiceGroups(groups) {
         if (type === "lubelogger") {
           if (vehicleID !== undefined) widget.vehicleID = parseInt(vehicleID, 10);
         }
-        if (type === "vikunja") {
+        if (["googletasks", "vikunja"].includes(type)) {
           if (enableTaskList !== undefined) widget.enableTaskList = !!enableTaskList;
+        }
+        if (type === "googletasks") {
+          if (enableBlocks !== undefined) widget.enableBlocks = !!JSON.parse(enableBlocks);
         }
         if (type === "prometheusmetric") {
           if (metrics) widget.metrics = metrics;
