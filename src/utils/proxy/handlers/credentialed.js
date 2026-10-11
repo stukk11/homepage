@@ -77,7 +77,7 @@ export default async function credentialedProxyHandler(req, res, map) {
         } else {
           headers.Authorization = basicAuthHeader(widget);
         }
-      } else if (widget.type === "ntfy") {
+      } else if (["ntfy", "whatsupdocker"].includes(widget.type)) {
         if (widget.key) {
           headers.Authorization = `Bearer ${widget.key}`;
         } else if (widget.username && widget.password) {
@@ -130,6 +130,10 @@ export default async function credentialedProxyHandler(req, res, map) {
         headers.Authorization = widget.key;
       } else if (widget.type === "gitlab") {
         headers["PRIVATE-TOKEN"] = widget.key;
+      } else if (widget.type === "fileflows") {
+        if (widget.key) {
+          headers["X-Webhook-Token"] = `${widget.key}`;
+        }
       } else if (widget.type === "speedtest") {
         if (widget.key) {
           // v1 does not require a key

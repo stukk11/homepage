@@ -35,10 +35,12 @@ vi.mock("widgets/widgets", () => ({
     proxmox: { api: "{url}/api2/json/{endpoint}" },
     truenas: { api: "{url}/api/v2.0/{endpoint}" },
     ntfy: { api: "{url}/{endpoint}" },
+    whatsupdocker: { api: "{url}/{endpoint}" },
     proxmoxbackupserver: { api: "{url}/api2/json/{endpoint}" },
     checkmk: { api: "{url}/{endpoint}" },
     stocks: { api: "{url}/{endpoint}" },
     speedtest: { api: "{url}/{endpoint}" },
+    fileflows: { api: "{url}/{endpoint}" },
     tubearchivist: { api: "{url}/{endpoint}" },
     autobrr: { api: "{url}/{endpoint}" },
     jellystat: { api: "{url}/{endpoint}" },
@@ -186,6 +188,24 @@ describe("utils/proxy/handlers/credentialed", () => {
     expect(params.headers.Authorization).toBe("Bearer k");
   });
 
+  it.each([
+    ["Bearer", { key: "token" }, "Bearer token"],
+    ["Basic", { username: "u", password: "p" }, `Basic ${Buffer.from("u:p").toString("base64")}`],
+    ["no", {}, undefined],
+    ["Bearer over Basic", { key: "token", username: "u", password: "p" }, "Bearer token"],
+  ])("uses %s auth for whatsupdocker", async (_mode, credentials, authorization) => {
+    getServiceWidget.mockResolvedValue({ type: "whatsupdocker", url: "http://whatsupdocker", ...credentials });
+    httpProxy.mockResolvedValue([200, "application/json", []]);
+
+    const req = { method: "GET", query: { group: "g", service: "s", endpoint: "api/containers", index: 0 } };
+    const res = createMockRes();
+
+    await credentialedProxyHandler(req, res);
+
+    const [, params] = httpProxy.mock.calls.at(-1);
+    expect(params.headers.Authorization).toBe(authorization);
+  });
+
   it("uses Bearer auth for ntfy when key is provided", async () => {
     getServiceWidget.mockResolvedValue({ type: "ntfy", url: "http://ntfy", topic: "alerts", key: "tk_test" });
     httpProxy.mockResolvedValue([200, "application/json", { ok: true }]);
@@ -309,6 +329,7 @@ describe("utils/proxy/handlers/credentialed", () => {
       [{ type: "trilium", url: "http://x", key: "k" }, { Authorization: "k" }],
       [{ type: "gitlab", url: "http://x", key: "k" }, { "PRIVATE-TOKEN": "k" }],
       [{ type: "speedtest", url: "http://x", key: "k" }, { Authorization: "Bearer k" }],
+      [{ type: "fileflows", url: "http://x", key: "k" }, { "X-Webhook-Token": "k" }],
       [
         { type: "azuredevops", url: "http://x", key: "k" },
         { Authorization: `Basic ${Buffer.from("$:k").toString("base64")}` },

@@ -99,7 +99,12 @@
         "unhealthy": "Niezdrowy",
         "not_found": "Nie znaleziono",
         "exited": "Zakończony",
-        "partial": "Częściowy"
+        "partial": "Częściowy",
+        "created": "Utworzony",
+        "paused": "Wstrzymany",
+        "restarting": "Ponowne uruchamianie",
+        "removing": "Usuwanie",
+        "dead": "Martwy"
     },
     "ping": {
         "error": "Błąd",
@@ -250,6 +255,16 @@
         "upload": "Wysyłanie",
         "leech": "Leech",
         "seed": "Seed"
+    },
+    "qui": {
+        "leech": "Leech",
+        "download": "Pobieranie",
+        "seed": "Seed",
+        "upload": "Wysyłanie",
+        "total": "Razem",
+        "errored": "Z błędami",
+        "ratio": "Ratio",
+        "freeSpace": "Wolne"
     },
     "qnap": {
         "cpuUsage": "Użycie CPU",
@@ -775,7 +790,8 @@
         "queue": "W kolejce",
         "processing": "Przetwarzane",
         "processed": "Przetworzone",
-        "time": "Czas"
+        "time": "Czas",
+        "failed": "Failed"
     },
     "firefly": {
         "networth": "Wartość netto",
@@ -851,6 +867,14 @@
     "booklore": {
         "libraries": "Biblioteki",
         "books": "Książki",
+        "reading": "Czytane",
+        "finished": "Skończone"
+    },
+    "bookorbit": {
+        "books": "Książki",
+        "authors": "Autorzy",
+        "series": "Serie",
+        "storage": "Pamięć",
         "reading": "Czytane",
         "finished": "Skończone"
     },
@@ -1253,5 +1277,8 @@
         "wanted": "Poszukiwane",
         "queued": "W kolejce",
         "leagues": "Ligi"
+    },
+    "feed": {
+        "noItems": "Brak elementów"
     }
 }

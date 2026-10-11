@@ -99,7 +99,12 @@
         "unhealthy": "No saludable",
         "not_found": "No trobat",
         "exited": "Tancat",
-        "partial": "Parcial"
+        "partial": "Parcial",
+        "created": "Creat",
+        "paused": "Pausat",
+        "restarting": "Reiniciant",
+        "removing": "Eliminant",
+        "dead": "Mort"
     },
     "ping": {
         "error": "Error",
@@ -251,6 +256,16 @@
         "leech": "Sangonera",
         "seed": "Sembrat"
     },
+    "qui": {
+        "leech": "Sangonera",
+        "download": "Baixada",
+        "seed": "Sembrat",
+        "upload": "Pujada",
+        "total": "Total",
+        "errored": "Errors",
+        "ratio": "Ràtio",
+        "freeSpace": "Lliure"
+    },
     "qnap": {
         "cpuUsage": "Ús de CPU",
         "memUsage": "Ús de Memòria",
@@ -276,28 +291,28 @@
         "seed": "Sembrat"
     },
     "sonarr": {
-        "wanted": "Volgut",
+        "wanted": "Pendents",
         "queued": "En cua",
         "series": "Sèries",
         "queue": "Cua",
         "unknown": "Desconegut"
     },
     "radarr": {
-        "wanted": "Volguts",
+        "wanted": "Pendents",
         "missing": "Falten",
-        "queued": "Encuat",
+        "queued": "En cua",
         "movies": "Pel·lícules",
         "queue": "Cua",
         "unknown": "Desconegut"
     },
     "lidarr": {
-        "wanted": "Volguts",
-        "queued": "Encuat",
+        "wanted": "Pendents",
+        "queued": "En cua",
         "artists": "Artistes"
     },
     "readarr": {
-        "wanted": "Volguts",
-        "queued": "Encuat",
+        "wanted": "Pendents",
+        "queued": "En cua",
         "books": "Llibres"
     },
     "bazarr": {
@@ -315,7 +330,7 @@
         "available": "Disponible",
         "completed": "Completat",
         "processing": "Processant",
-        "issues": "Temes oberts"
+        "issues": "Incidències"
     },
     "netalertx": {
         "total": "Total",
@@ -455,8 +470,8 @@
         "domain_count": "Dominis"
     },
     "medusa": {
-        "wanted": "Volguts",
-        "queued": "Encuat",
+        "wanted": "Pendents",
+        "queued": "En cua",
         "series": "Sèries"
     },
     "minecraft": {
@@ -762,8 +777,8 @@
     },
     "mylar": {
         "series": "Sèries",
-        "issues": "Problemes",
-        "wanted": "Volguts"
+        "issues": "Números",
+        "wanted": "Pendents"
     },
     "photoprism": {
         "albums": "Àlbums",
@@ -775,7 +790,8 @@
         "queue": "Cua",
         "processing": "Processant",
         "processed": "Processat",
-        "time": "Temps"
+        "time": "Temps",
+        "failed": "Failed"
     },
     "firefly": {
         "networth": "Valor Net",
@@ -851,6 +867,14 @@
     "booklore": {
         "libraries": "Biblioteques",
         "books": "Llibres",
+        "reading": "Llegint",
+        "finished": "Acabats"
+    },
+    "bookorbit": {
+        "books": "Llibres",
+        "authors": "Autors",
+        "series": "Sèries",
+        "storage": "Emmagatzematge",
         "reading": "Llegint",
         "finished": "Acabats"
     },
@@ -989,7 +1013,7 @@
     },
     "gitea": {
         "notifications": "Notificacions",
-        "issues": "Problemes",
+        "issues": "Incidències",
         "pulls": "Sol·licitud de Canvis",
         "repositories": "Repositoris"
     },
@@ -1119,7 +1143,7 @@
     },
     "gitlab": {
         "groups": "Grups",
-        "issues": "Problemes",
+        "issues": "Incidències",
         "merges": "Merge Requests",
         "projects": "Projectes"
     },
@@ -1156,7 +1180,7 @@
     },
     "checkmk": {
         "serviceErrors": "Errors de servei",
-        "hostErrors": "Problemes de l'hoste"
+        "hostErrors": "Errors de l'hoste"
     },
     "komodo": {
         "total": "Total",
@@ -1250,8 +1274,11 @@
         "storage": "Emmagatzematge"
     },
     "sportarr": {
-        "wanted": "Volgut",
-        "queued": "Encuat",
+        "wanted": "Pendents",
+        "queued": "En cua",
         "leagues": "Lligues"
+    },
+    "feed": {
+        "noItems": "Sense elements"
     }
 }

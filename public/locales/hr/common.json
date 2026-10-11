@@ -99,7 +99,12 @@
         "unhealthy": "Nefunkcionalno",
         "not_found": "Nepronađeno",
         "exited": "Zatoreno",
-        "partial": "Djelomično"
+        "partial": "Djelomično",
+        "created": "Created",
+        "paused": "Paused",
+        "restarting": "Restarting",
+        "removing": "Removing",
+        "dead": "Dead"
     },
     "ping": {
         "error": "Greška",
@@ -250,6 +255,16 @@
         "upload": "Prenesi",
         "leech": "Korištenje tuđeg sadržaja",
         "seed": "Prenošenje preuzetog sadržaja"
+    },
+    "qui": {
+        "leech": "Leech",
+        "download": "Download",
+        "seed": "Seed",
+        "upload": "Upload",
+        "total": "Total",
+        "errored": "Errored",
+        "ratio": "Ratio",
+        "freeSpace": "Free"
     },
     "qnap": {
         "cpuUsage": "Korištenje procesora",
@@ -775,7 +790,8 @@
         "queue": "Red čekanja",
         "processing": "Obrada",
         "processed": "Obrađeno",
-        "time": "Vrijeme"
+        "time": "Vrijeme",
+        "failed": "Failed"
     },
     "firefly": {
         "networth": "Neto vrijednost",
@@ -853,6 +869,14 @@
         "books": "Knjige",
         "reading": "Čitanje",
         "finished": "Završeno"
+    },
+    "bookorbit": {
+        "books": "Books",
+        "authors": "Authors",
+        "series": "Series",
+        "storage": "Storage",
+        "reading": "Reading",
+        "finished": "Finished"
     },
     "jdownloader": {
         "downloadCount": "Red čekanja",
@@ -1253,5 +1277,8 @@
         "wanted": "Željeno",
         "queued": "U redu čekanja",
         "leagues": "Lige"
+    },
+    "feed": {
+        "noItems": "No items"
     }
 }
