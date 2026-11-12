@@ -21,7 +21,16 @@
         "seconds": "сек"
     },
     "auth": {
-        "signout": "Выход"
+        "signout": "Выход",
+        "loginRequired": "Login Required",
+        "loginDescription": "Login to view your dashboard.",
+        "signIn": "Sign in",
+        "password": "Password",
+        "loginVia": "Login via {{provider}}",
+        "redirecting": "Redirecting to {{provider}}",
+        "invalidPassword": "Invalid password. Please try again.",
+        "authenticationError": "Authentication error",
+        "authenticationErrorDescription": "Auth is disabled or misconfigured."
     },
     "widget": {
         "missing_type": "Отсутствует тип виджета: {{type}}",
@@ -72,7 +81,7 @@
         "empty_data": "Статус подсистемы неизвестен"
     },
     "unifi_drive": {
-        "healthy": "Здоров",
+        "healthy": "Исправен",
         "degraded": "Деградация",
         "no_data": "Нет доступных данных о хранилище"
     },
@@ -257,14 +266,14 @@
         "seed": "Сид"
     },
     "qui": {
-        "leech": "Leech",
-        "download": "Download",
-        "seed": "Seed",
-        "upload": "Upload",
-        "total": "Total",
-        "errored": "Errored",
-        "ratio": "Ratio",
-        "freeSpace": "Free"
+        "leech": "Лич",
+        "download": "Скачивание",
+        "seed": "Сид",
+        "upload": "Загрузка",
+        "total": "Всего",
+        "errored": "Ошибок",
+        "ratio": "Соотношение",
+        "freeSpace": "Свободно"
     },
     "qnap": {
         "cpuUsage": "Использование ЦП",
@@ -358,7 +367,10 @@
     "portainer": {
         "running": "Запущено",
         "stopped": "Остановлено",
-        "total": "Всего"
+        "total": "Всего",
+        "applications": "Applications",
+        "services": "Services",
+        "namespaces": "Namespaces"
     },
     "suwayomi": {
         "download": "Загружено",
@@ -791,7 +803,7 @@
         "processing": "Обрабатывается",
         "processed": "Обработано",
         "time": "Время",
-        "failed": "Failed"
+        "failed": "Неудачно"
     },
     "firefly": {
         "networth": "Общая средства",
@@ -871,12 +883,12 @@
         "finished": "Завершено"
     },
     "bookorbit": {
-        "books": "Books",
-        "authors": "Authors",
-        "series": "Series",
-        "storage": "Storage",
-        "reading": "Reading",
-        "finished": "Finished"
+        "books": "Книги",
+        "authors": "Авторы",
+        "series": "Серии",
+        "storage": "Память",
+        "reading": "Чтение",
+        "finished": "Завершено"
     },
     "jdownloader": {
         "downloadCount": "Очередь",
@@ -987,6 +999,11 @@
         "movieReclaimable": "Восстановленный фильм",
         "showReclaimable": "Восстановленное шоу",
         "totalCapacity": "Общая ёмкость"
+    },
+    "netbird": {
+        "online": "Online Peers",
+        "users": "Users",
+        "login_expired": "Login Expired"
     },
     "netdata": {
         "warnings": "Предупреждения",
@@ -1126,7 +1143,15 @@
         "cpu": "ЦП",
         "memory": "Память",
         "disk": "Диск",
-        "network": "Сеть"
+        "network": "Сеть",
+        "temp": "Temp",
+        "load": "Load",
+        "gpu": "GPU",
+        "uptime": "Uptime",
+        "services": "Services",
+        "updates": "Updates",
+        "battery": "Battery",
+        "agent": "Agent"
     },
     "argocd": {
         "apps": "Приложения",
@@ -1279,6 +1304,6 @@
         "leagues": "Лиги"
     },
     "feed": {
-        "noItems": "No items"
+        "noItems": "Ничего нет"
     }
 }

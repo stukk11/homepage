@@ -21,7 +21,16 @@
         "seconds": "s"
     },
     "auth": {
-        "signout": "Abmelden"
+        "signout": "Abmelden",
+        "loginRequired": "Login Required",
+        "loginDescription": "Login to view your dashboard.",
+        "signIn": "Sign in",
+        "password": "Password",
+        "loginVia": "Login via {{provider}}",
+        "redirecting": "Redirecting to {{provider}}",
+        "invalidPassword": "Invalid password. Please try again.",
+        "authenticationError": "Authentication error",
+        "authenticationErrorDescription": "Auth is disabled or misconfigured."
     },
     "widget": {
         "missing_type": "Fehlender Widget-Typ: {{type}}",
@@ -358,7 +367,10 @@
     "portainer": {
         "running": "Wird ausgeführt",
         "stopped": "Gestoppt",
-        "total": "Total"
+        "total": "Total",
+        "applications": "Applications",
+        "services": "Services",
+        "namespaces": "Namespaces"
     },
     "suwayomi": {
         "download": "Heruntergeladen",
@@ -871,12 +883,12 @@
         "finished": "Fertig"
     },
     "bookorbit": {
-        "books": "Books",
-        "authors": "Authors",
-        "series": "Series",
+        "books": "Bücher",
+        "authors": "Autoren",
+        "series": "Serien",
         "storage": "Storage",
         "reading": "Reading",
-        "finished": "Finished"
+        "finished": "Beendet"
     },
     "jdownloader": {
         "downloadCount": "Warteschlange",
@@ -988,6 +1000,11 @@
         "showReclaimable": "Serie zurückforderbar",
         "totalCapacity": "Gesamte Kapazität"
     },
+    "netbird": {
+        "online": "Online Peers",
+        "users": "Users",
+        "login_expired": "Login Expired"
+    },
     "netdata": {
         "warnings": "Warnungen",
         "criticals": "Kritisch"
@@ -999,11 +1016,11 @@
         "message": "Nachricht",
         "tags": "Schlagwörter",
         "none": "Keine",
-        "min": "Min",
-        "low": "Low",
-        "default": "Default",
-        "high": "High",
-        "urgent": "Urgent"
+        "min": "Minimal",
+        "low": "Niedrig",
+        "default": "Standard",
+        "high": "Hoch",
+        "urgent": "Dringend"
     },
     "plantit": {
         "events": "Ereignisse",
@@ -1117,8 +1134,8 @@
     "beszel": {
         "name": "Name",
         "systems": "Systeme",
-        "up": "Up",
-        "down": "Down",
+        "up": "Online",
+        "down": "Offline",
         "paused": "Pausiert",
         "pending": "Wartend",
         "status": "Status",
@@ -1126,7 +1143,15 @@
         "cpu": "CPU",
         "memory": "RAM",
         "disk": "Festplatte",
-        "network": "NET"
+        "network": "NET",
+        "temp": "Temp",
+        "load": "Load",
+        "gpu": "GPU",
+        "uptime": "Uptime",
+        "services": "Services",
+        "updates": "Updates",
+        "battery": "Battery",
+        "agent": "Agent"
     },
     "argocd": {
         "apps": "Anwendungen",
@@ -1268,10 +1293,10 @@
         "steps": "Schritte"
     },
     "syncthing": {
-        "connected": "Connected",
-        "synced": "Synced",
-        "errors": "Errors",
-        "storage": "Storage"
+        "connected": "Verbunden",
+        "synced": "Synchronisiert",
+        "errors": "Fehler",
+        "storage": "Speicher"
     },
     "sportarr": {
         "wanted": "Wanted",

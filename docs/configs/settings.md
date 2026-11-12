@@ -3,7 +3,7 @@ title: Settings
 description: Service Configuration
 ---
 
-The `settings.yaml` file allows you to define application level options. For changes made to this file to take effect, you will need to regenerate the static HTML, this can be done by clicking the refresh icon in the bottom right of the page.
+The `settings.yaml` file allows you to define application level options. After making changes, click the refresh icon in the bottom right of the page to clear the cached dashboard data and reload the page.
 
 ## Title
 
@@ -33,7 +33,7 @@ startUrl: https://custom.url
 
 !!! warning "Heads Up!"
 
-    You will need to restart the container any time you add new images, this is a limitation of the Next.js static site server.
+    You will need to restart the container any time you add new local images so the server can discover them.
 
 !!! warning "Heads Up!"
 
@@ -562,6 +562,7 @@ You can use the 'Quick Launch' feature to search services, perform a web search 
 
 There are a few optional settings for the Quick Launch feature:
 
+- `disabled`: completely disable Quick Launch, so typing on the page does nothing. This is false by default.
 - `searchDescriptions`: which lets you control whether item descriptions are included in searches. This is false by default. When enabled, results that match the item name will be placed above those that only match the description.
 - `hideInternetSearch`: disable automatically including the currently-selected web search (e.g. from the widget) as a Quick Launch option. This is false by default, enabling the feature.
 - `showSearchSuggestions`: show search suggestions for the internet search. If this is not specified then the setting will be inherited from the search widget. If it is not specified there either, it will default to false. For custom providers the `suggestionUrl` needs to be set in order for this to work.
